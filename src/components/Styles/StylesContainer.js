@@ -48,6 +48,10 @@ class StylesContainer extends Component {
 
         .then((categories) => {
           dispatch({type: "Fetch_Categories_End", payload: categories})
+          if(categories.data.length > 0) {
+              dispatch({type: "Initial_Style", style: categories.data[0].name, header: categories.data[0].name})
+          }
+        
         })
       })
     }
@@ -55,7 +59,6 @@ class StylesContainer extends Component {
   }
 
   render() {
-
     if(this.props.categories.categories && this.props.products.products) {
         var Header = null;
 

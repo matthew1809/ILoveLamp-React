@@ -16,9 +16,16 @@ class TopPicks extends Component {
 
       var productData = this.props.products.products.data;
       
-      var TopPicks = collections.find((collections) => {
-        return collections.slug === "top_picks"
-      })
+      let TopPicks;
+      
+      try {
+        TopPicks = collections.find((collections) => {
+          return collections.slug === "top_picks"
+        })
+      } 
+      catch(e) {
+        TopPicks = collections[0]
+      }
       
       let TopPicksProductIDs;
       

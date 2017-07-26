@@ -57,44 +57,71 @@ class StylesContainer extends Component {
   render() {
 
     if(this.props.categories.categories && this.props.products.products) {
+        var Header = null;
 
-      var Header = null;
-
-      switch (this.props.styles.header) {
-        case "Modern": Header = Modern;
-        break;
-        case "Silver": Header = Silver;
-        break;
-        case "Classic": Header = Classic;
-        break;
-        case "Retro": Header = Retro;
-        break;
-        default: Header = Modern;
+        switch (this.props.styles.header) {
+          case "Modern": Header = Modern;
+          break;
+          case "Silver": Header = Silver;
+          break;
+          case "Classic": Header = Classic;
+          break;
+          case "Retro": Header = Retro;
+          break;
+          default: Header = Modern;
+        }
+        
+        if(this.props.categories.categories.data.length > 0) {
+          
+        return (
+          <div>
+          <header className="medium-header light" style={{"backgroundImage": `url(${Header})`, "backgroundRepeat": "no-repeat", "backgroundPosition": "center/cover", "boxSizing": "border-box", "overflow": "scroll", "textAlign": "center"}}>
+          <MobileNav />
+          <CartHeaderLight />
+          <StylesHeader />
+          </header>
+          <main role="main" id="container" className="main-container push">
+              <section className="style-links">
+                  <div className="content">
+                      <StylesMenu />
+                  </div>
+              </section>
+              <section className="products">
+                  <div className="content">
+                    <StyleProducts />
+                  </div>
+              </section>
+              <MailingList/>
+          </main>
+          <Footer />
+          </div>
+        )
       }
-
-      return (
-        <div>
-        <header className="medium-header light" style={{"backgroundImage": `url(${Header})`, "backgroundRepeat": "no-repeat", "backgroundPosition": "center/cover", "boxSizing": "border-box", "overflow": "scroll", "textAlign": "center"}}>
-        <MobileNav />
-        <CartHeaderLight />
-        <StylesHeader />
-        </header>
-        <main role="main" id="container" className="main-container push">
-            <section className="style-links">
+      else {
+        return (
+          <div>
+          <header className="medium-header light" style={{"backgroundImage": `url(${Header})`, "backgroundRepeat": "no-repeat", "backgroundPosition": "center/cover", "boxSizing": "border-box", "overflow": "scroll", "textAlign": "center"}}>
+          <MobileNav />
+          <CartHeaderLight />
+          <StylesHeader />
+          </header>
+          <main role="main" id="container" className="main-container push">
+              <section className="style-links">
+                  <div className="content">
+                      <StylesMenu />
+                  </div>
+              </section>
+              <section className="products">
                 <div className="content">
-                    <StylesMenu />
+                  <h2>You do not have any styles</h2>
                 </div>
-            </section>
-            <section className="products">
-                <div className="content">
-                  <StyleProducts />
-                </div>
-            </section>
-            <MailingList/>
-        </main>
-        <Footer />
-        </div>
-      )
+              </section>
+              <MailingList/>
+          </main>
+          <Footer />
+          </div>
+        )
+      }
     }
 
     else {

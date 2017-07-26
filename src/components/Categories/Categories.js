@@ -29,7 +29,13 @@ class Categories extends Component {
 
     var products = this.props.products.products;
     var productData = this.props.products.products.data;
-    var product = this.props.categories.categories.included.products[0];
+    let product;
+    try {
+      product = this.props.categories.categories.included.products[0];
+    }
+    catch(err) {
+      product = null;
+    }
 
     return (
       <div className="styles-list">

@@ -9,6 +9,7 @@ function mapStateToProps(state) {
 class StyleProducts extends Component {
   render() {
 
+  
     var productsToMap = [];
     var categories = this.props.categories.categories.data;
     var CurrentStyle = this.props.styles.style;

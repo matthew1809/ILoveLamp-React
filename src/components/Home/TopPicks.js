@@ -9,13 +9,13 @@ function mapStateToProps(state) {
 class TopPicks extends Component {
 
   render() {
-
+      
       var TopPicksToMap = [];
 
       var collections = this.props.collections.collections.data;
 
       var productData = this.props.products.products.data;
-
+      
       var TopPicks = collections.find((collections) => {
         return collections.slug === "top_picks"
       })
@@ -69,7 +69,7 @@ class TopPicks extends Component {
         TopPicksProductIDs = null;
         return (
           <div className="content">
-            <h2>You do not have any products</h2>
+            <h2>You do not have any products attached to a collection with the slug "top_picks"</h2>
           </div>
         )
       }

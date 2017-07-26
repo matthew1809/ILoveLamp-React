@@ -113,7 +113,7 @@ class StylesContainer extends Component {
               </section>
               <section className="products">
                 <div className="content">
-                  <h2>You do not have any styles</h2>
+                  <h2>You do not have any categories set up with products</h2>
                 </div>
               </section>
               <MailingList/>

@@ -16,6 +16,17 @@ import Retro from '../../assets/img/unique.png';
 
 var api = require('../../utils/moltin.js');
 
+let Header;
+
+var HeaderStyle = {
+  "backgroundImage": `url(${Header})`,
+  "background-repeat": "no-repeat",
+  "background-attachment": "scroll",
+  "background-position": "center",
+  "background-size": "center/cover",
+  "background-clip": "border-box"
+};
+
 function mapStateToProps(state) {
     return(state)
 }
@@ -60,7 +71,6 @@ class StylesContainer extends Component {
 
   render() {
     if(this.props.categories.categories && this.props.products.products) {
-        var Header = null;
 
         switch (this.props.styles.header) {
           case "Modern": Header = Modern;

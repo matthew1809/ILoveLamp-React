@@ -5,7 +5,12 @@ import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 
 var HeaderStyle = {
-  backgroundImage: `url(${Header})`
+  "backgroundImage": `url(${Header})`,
+  "background-repeat": "no-repeat",
+  "background-attachment": "scroll",
+  "background-position": "center",
+  "background-size": "center/cover",
+  "background-clip": "border-box"
 };
 
 function mapStateToProps(state) {
@@ -16,9 +21,9 @@ class HomeHeader extends Component {
 
   render() {
 
-    var toHome = () => {
+    var toProducts = () => {
       this.props.dispatch((dispatch) => {
-        dispatch(push('/'))
+        dispatch(push('/products'))
       })
     }
 
@@ -30,7 +35,7 @@ class HomeHeader extends Component {
           <div className="header-container">
               <div className="content">
                   <h1>I love carpet. I love desk.</h1>
-                  <a className="btn" href="/" onClick={() => toHome()}>I love lamp</a>
+                  <a className="btn" href="/" onClick={(e) => {toProducts();e.preventDefault()}}>I love lamp</a>
               </div>
           </div>
           <div className="down-arrow"><span className="arrow">	&#10095; </span></div>

@@ -11,20 +11,11 @@ class MenuButton extends Component {
     
     let menu_btn_colour;
 
-    if(this.props.router.location.pathname.includes("cart")) {
-      menu_btn_colour = "";
-    }
-    else if(this.props.router.location.pathname.includes("products")) {
-      menu_btn_colour = "";
-    }
-    else if(this.props.router.location.pathname.includes("checkout")) {
-      menu_btn_colour = "";
-    }
-    else if(this.props.router.location.pathname.includes("confirmation")) {
-      menu_btn_colour = "";
+    if(this.props.router.location.pathname.includes("styles")) {
+      menu_btn_colour = "light";
     }
     else {
-      menu_btn_colour = "light";
+      menu_btn_colour = "";
     };
 
     

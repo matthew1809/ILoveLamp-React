@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import Modern from '../../assets/img/modern.png';
 import Silver from '../../assets/img/silver.png';
 import Classic from '../../assets/img/bright.png';
-import Retro from '../../assets/img/unique.png';
+import Unique from '../../assets/img/unique.png';
 
 function mapStateToProps(state) {
   return state
@@ -42,7 +42,7 @@ class StylesHeader extends Component {
       break;
       case "Classic": Header = Classic;
       break;
-      case "Retro": Header = Retro;
+      case "Unique": Header = Unique;
       break;
       default: Header = Modern;
     }

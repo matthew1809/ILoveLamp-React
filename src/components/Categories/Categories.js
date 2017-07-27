@@ -18,12 +18,10 @@ class Categories extends Component {
     }
 
     var ChangeStyle = (name) => {
-
         this.props.dispatch((dispatch) => {
-
           dispatch({type: "Change_Style", style: name})
         })
-
+        
         ToStyles()
     }
 
@@ -39,6 +37,7 @@ class Categories extends Component {
     }
     
     if(this.props.categories.categories.data.length > 0) {
+      
       return (
         <div className="styles-list">
           {this.props.categories.categories.data.map(function(category) {
@@ -75,8 +74,10 @@ class Categories extends Component {
     
     else {
       return (
-        <div className="content">
-          <h2>You have no categories</h2>  
+        <div className="styles-list">
+          <div className="content">
+            <h2>You have no categories</h2>  
+          </div>
         </div>
       )
     }

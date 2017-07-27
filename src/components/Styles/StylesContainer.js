@@ -1,21 +1,15 @@
 import React, { Component } from 'react';
 import MailingList from '../global/MailingList';
-import CartHeaderLight from '../Cart/CartHeaderLight';
+import StylesHeader from './StylesHeader';
 import Footer from '../global/Footer';
 import StylesMenu from './StylesMenu';
-import StylesHeader from './StylesHeader';
+import StylesHeading from './StylesHeading';
 import StyleProducts from './StyleProducts';
 import Loading from '../global/Loading';
 import { connect } from 'react-redux';
 import MobileNav from '../global/Mobile/MobileNav';
 
-import Unique from '../../assets/img/unique.png';
-import Silver from '../../assets/img/silver.png';
-import Classic from '../../assets/img/bright.png';
-import Modern from '../../assets/img/modern.png';
-
 var api = require('../../utils/moltin.js');
-
 
 function mapStateToProps(state) {
     return(state)
@@ -61,51 +55,25 @@ class StylesContainer extends Component {
 
   render() {
     if(this.props.categories.categories && this.props.products.products) {
-        
-      let Header;
-        
-        switch (this.props.styles.header) {
-          case "Unique": Header = Unique;
-          break;
-          case "Silver": Header = Silver;
-          break;
-          case "Classic": Header = Classic;
-          break;
-          case "Modern": Header = Modern;
-          break;
-          default: Header = Modern;
-        }
-            
-        var HeaderStyle = {
-          "backgroundImage": `url(${Header})`,
-          "background-repeat": "no-repeat",
-          "background-attachment": "scroll",
-          "background-position": "center",
-          "background-size": "center/cover",
-          "background-clip": "border-box"
-        };
-        
+      
         if(this.props.categories.categories.data.length > 0) {
           
         return (
           <div>
-          <header className="medium-header light" style={HeaderStyle}>
           <MobileNav />
-          <CartHeaderLight />
           <StylesHeader />
-          </header>
           <main role="main" id="container" className="main-container push">
-              <section className="style-links">
-                  <div className="content">
-                      <StylesMenu />
-                  </div>
-              </section>
-              <section className="products">
-                  <div className="content">
-                    <StyleProducts />
-                  </div>
-              </section>
-              <MailingList/>
+            <section className="style-links">
+              <div className="content">
+                <StylesMenu />
+              </div>
+            </section>
+            <section className="products">
+                <div className="content">
+                  <StyleProducts />
+                </div>
+            </section>
+            <MailingList/>
           </main>
           <Footer />
           </div>
@@ -114,11 +82,9 @@ class StylesContainer extends Component {
       else {
         return (
           <div>
-          <header className="medium-header light" style={{"backgroundImage": `url(${Header})`, "backgroundRepeat": "no-repeat", "backgroundPosition": "center/cover", "boxSizing": "border-box", "overflow": "scroll", "textAlign": "center"}}>
           <MobileNav />
-          <CartHeaderLight />
           <StylesHeader />
-          </header>
+          <StylesHeading />
           <main role="main" id="container" className="main-container push">
               <section className="style-links">
                   <div className="content">
@@ -142,7 +108,7 @@ class StylesContainer extends Component {
       return (
         <div>
         <MobileNav />
-        <CartHeaderLight/>
+        <StylesHeader/>
         <Loading />
         <Footer />
         </div>

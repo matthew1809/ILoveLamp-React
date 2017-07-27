@@ -6,11 +6,11 @@ import { push } from 'react-router-redux';
 
 var HeaderStyle = {
   "backgroundImage": `url(${Header})`,
-  "background-repeat": "no-repeat",
-  "background-attachment": "scroll",
-  "background-position": "center",
-  "background-size": "center/cover",
-  "background-clip": "border-box"
+  "backgroundRepeat": "no-repeat",
+  "backgroundAttachment": "scroll",
+  "backgroundPosition": "center",
+  "backgroundSize": "cover",
+  "backgroundOrigin": "border-box"
 };
 
 function mapStateToProps(state) {

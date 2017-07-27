@@ -77,6 +77,11 @@ class CartHeader extends Component {
             <CartCounter />
           </nav>
         </div>
+        <div className="header-container hide-content">
+      <div className="content">
+          <h1>Products listing</h1>
+      </div>
+  </div>
       </header>
     )
   };

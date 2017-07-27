@@ -1,5 +1,5 @@
 const initialState = {
-  style: "Modern",
+  style: "No Categories Set Up",
   header: "Modern",
   error: null
 }

@@ -76,7 +76,7 @@ class TopPicks extends Component {
         TopPicksProductIDs = null;
         return (
           <div className="content">
-            <h2>You do not have any products attached to a collection with the slug "top_picks"</h2>
+            <p>You do not have any products attached to a collection.</p>
           </div>
         )
       }

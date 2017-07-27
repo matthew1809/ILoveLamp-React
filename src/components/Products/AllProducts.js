@@ -19,13 +19,11 @@ class AllProducts extends Component {
 
       var ChangeHidden = (event) => {
         if(event === "unhide") {
-
           this.props.dispatch((dispatch) => {
             dispatch({type: "Unhide_Overlay"})
           })
         }
         if(event === "hide") {
-
           this.props.dispatch((dispatch) => {
             dispatch({type: "hide_Overlay"})
           })
@@ -33,11 +31,10 @@ class AllProducts extends Component {
       };
 
       return (
-      <main role="main" id="container" className="main-container push">
-      <section className="products">
-          <div className="content">
+        <main role="main" id="container" className="main-container push">
+          <section className="products">
+            <div className="content">
               <div className="product-list">
-
                 {products.data.map(function(product) {
                   var background = product.background_colour;
                   return (
@@ -45,21 +42,18 @@ class AllProducts extends Component {
                       <div className="product-image" style={{"background": background}}>
                           <ProductImage product={product} products={products}/>
                       </div>
-                      <div className={`overlay ${OverlayIsHidden}`} aria-hidden="true">
-                          <div className="overlay-background" style={{"background": "#aaaaaa"}}></div>
-                          <div className="overlay-content">
-                              <div className="title">{product.name}</div>
-                              <div className="price">{'$' + product.meta.display_price.with_tax.amount/100}</div>
-                          </div>
+                      <div className={`overlay ${OverlayIsHidden}`}>
+                        <div className="overlay-background" style={{"background": "#aaaaaa"}}></div>
+                        <div className="overlay-content">
+                          <div className="title">{product.name}</div>
+                          <div className="price">{'$' + product.meta.display_price.with_tax.amount/100}</div>
+                        </div>
                       </div>
                     </a>
                   )
-
                 })}
-
-
-                  </div>
               </div>
+            </div>
           </section>
           <MailingList />
         </main>
@@ -71,7 +65,7 @@ class AllProducts extends Component {
       <main role="main" id="container" className="main-container push">
       <section className="products">
         <div className="content">
-          <h2>You do not have any products</h2>
+          <p>You do not have any products</p>
         </div>
       </section>
       <MailingList />

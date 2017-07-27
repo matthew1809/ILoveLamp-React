@@ -11,10 +11,10 @@ class ProductImage extends Component {
         return fileId === el.id
       })
       
-      return <img alt="" src={file.link.href} style={{"background": this.props.background}}/> || <img alt="" src={placeholder}/>
+      return <img alt={'product name:' + this.props.product.name + ', product description:' + this.props.product.description} src={file.link.href} style={{"background": this.props.background}}/> || <img alt="placeholder image" src={placeholder}/>
 
     } catch (e) {
-      return <img alt="" src={placeholder}/>
+      return <img alt="placeholder image" src={placeholder}/>
     }
 
   }

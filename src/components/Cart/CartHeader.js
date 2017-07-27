@@ -44,7 +44,7 @@ class CartHeader extends Component {
 
 
     return (
-      <header className="medium-header push">
+      <header className="push">
         <div className="nav-container">
           <nav className="primary-nav">
             <a href="products" onClick={() => toProducts()}>Products</a>
@@ -93,9 +93,9 @@ class CartHeader extends Component {
           </nav>
         </div>
         <div className="header-container smaller">
-        <div className="content">
+          <div className="content">
             <h1>{headerText}</h1>
-        </div>
+          </div>
         </div>
       </header>
     )

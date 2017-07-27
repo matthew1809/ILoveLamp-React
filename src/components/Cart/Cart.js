@@ -81,7 +81,7 @@ class Cart extends Component {
                     </div>
                     <CartItems />
                     <div className="total-price">
-                      Subtotal <span className="price">{subtotal}</span>
+                      Subtotal<span className="hide-content"> of all products</span> <span className="price">{subtotal}</span>
                     </div>
                     <button type="submit" className="submit" href="/checkout" onClick={(e) => {toCheckout();e.preventDefault()}}>Checkout</button>
                   </form>

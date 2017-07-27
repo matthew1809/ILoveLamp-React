@@ -9,23 +9,13 @@ import Loading from '../global/Loading';
 import { connect } from 'react-redux';
 import MobileNav from '../global/Mobile/MobileNav';
 
-import Modern from '../../assets/img/modern.png';
+import Unique from '../../assets/img/unique.png';
 import Silver from '../../assets/img/silver.png';
 import Classic from '../../assets/img/bright.png';
-import Retro from '../../assets/img/unique.png';
+import Modern from '../../assets/img/modern.png';
 
 var api = require('../../utils/moltin.js');
 
-let Header;
-
-var HeaderStyle = {
-  "backgroundImage": `url(${Header})`,
-  "background-repeat": "no-repeat",
-  "background-attachment": "scroll",
-  "background-position": "center",
-  "background-size": "center/cover",
-  "background-clip": "border-box"
-};
 
 function mapStateToProps(state) {
     return(state)
@@ -71,24 +61,35 @@ class StylesContainer extends Component {
 
   render() {
     if(this.props.categories.categories && this.props.products.products) {
-
+        
+      let Header;
+        
         switch (this.props.styles.header) {
-          case "Modern": Header = Modern;
+          case "Unique": Header = Unique;
           break;
           case "Silver": Header = Silver;
           break;
           case "Classic": Header = Classic;
           break;
-          case "Retro": Header = Retro;
+          case "Modern": Header = Modern;
           break;
           default: Header = Modern;
         }
+            
+        var HeaderStyle = {
+          "backgroundImage": `url(${Header})`,
+          "background-repeat": "no-repeat",
+          "background-attachment": "scroll",
+          "background-position": "center",
+          "background-size": "center/cover",
+          "background-clip": "border-box"
+        };
         
         if(this.props.categories.categories.data.length > 0) {
           
         return (
           <div>
-          <header className="medium-header light" style={{"backgroundImage": `url(${Header})`, "backgroundRepeat": "no-repeat", "backgroundPosition": "center/cover", "boxSizing": "border-box", "overflow": "scroll", "textAlign": "center"}}>
+          <header className="medium-header light" style={HeaderStyle}>
           <MobileNav />
           <CartHeaderLight />
           <StylesHeader />
@@ -126,7 +127,7 @@ class StylesContainer extends Component {
               </section>
               <section className="products">
                 <div className="content">
-                  <h2>You do not have any categories set up with products</h2>
+                  <p>You do not have any categories set up with products</p>
                 </div>
               </section>
               <MailingList/>

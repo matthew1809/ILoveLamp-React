@@ -3,6 +3,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 You can find a guide to some of the most common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
 ---
+## Note
+
+27/07/2017
+When deploying the app you may see Eslint warnings about `jsx-a11y/href-no-hash`. 
+
+This is an open issue with create-react-app, and there is an [open P/R](https://github.com/facebookincubator/create-react-app/pull/2690) to fix. 
+
+Once a new release of `create-react-app` is cut, including the P/R, you can upgrade your `react-scripts` to fix with the command `yarn add --exact react-scripts@XXX` where XXX is the new release i.e. 1.0.10
+ 
+---
 
 ## Deploying the app with Heroku
 
@@ -17,7 +27,7 @@ You can find a guide to some of the most common tasks [here](https://github.com/
 3. Run `docker build -t lamp ` at command line
 4. Run the docker image with the command `docker run -p 
 5000 IMAGE_ID` where `IMAGE_ID` is the image ID shown in the result of step 3.
-5. Access your app on port 3000
+5. Access your app on port 5000
 
 ---
 

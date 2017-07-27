@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AllProducts from './AllProducts';
 import Footer from '../global/Footer';
-import CartHeader from '../Cart/CartHeader';
+import ProductsHeader from './ProductsHeader';
 import MobileNav from '../global/Mobile/MobileNav';
 import { connect } from 'react-redux';
 import Loading from '../global/Loading';
@@ -46,7 +46,7 @@ class ProductsContainer extends Component {
       return (
             <div>
               <MobileNav />
-              <CartHeader />
+              <ProductsHeader />
               <AllProducts/>
               <Footer />
             </div>
@@ -55,7 +55,7 @@ class ProductsContainer extends Component {
       return (
         <div>
           <MobileNav />
-          <CartHeader />
+          <ProductsHeader />
           <Loading />
           <Footer />
         </div>

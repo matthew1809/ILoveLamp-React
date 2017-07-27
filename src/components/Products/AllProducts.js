@@ -30,9 +30,6 @@ class AllProducts extends Component {
             dispatch({type: "hide_Overlay"})
           })
         }
-        else {
-          //console.log("something is fucked")
-        }
       };
 
       return (

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { push } from 'react-router-redux';
-import CartCounter from './CartCounter';
+import CartCounter from '../Cart/CartCounter';
 import { connect } from 'react-redux';
 
 function mapStateToProps(state) {
@@ -28,23 +28,8 @@ class CartHeader extends Component {
       })
     }
 
-    let headerText;
-
-    if(this.props.router.location.pathname.includes("cart")) {
-      headerText = "Shopping Cart";
-    }
-
-    else if(this.props.router.location.pathname.includes("checkout")) {
-      headerText = "Checkout";
-    }
-
-    else if(this.props.router.location.pathname.includes("order-confirmation")) {
-      headerText = "Order Confirmation";
-    }
-
-
     return (
-      <header className="medium-header push">
+      <header className="push">
         <div className="nav-container">
           <nav className="primary-nav">
             <a href="products" onClick={() => toProducts()}>Products</a>
@@ -91,11 +76,6 @@ class CartHeader extends Component {
           <nav className="secondary-nav">
             <CartCounter />
           </nav>
-        </div>
-        <div className="header-container smaller">
-        <div className="content">
-            <h1>{headerText}</h1>
-        </div>
         </div>
       </header>
     )

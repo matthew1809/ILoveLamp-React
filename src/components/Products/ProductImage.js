@@ -10,11 +10,11 @@ class ProductImage extends Component {
       var file = this.props.products.included.files.find(function (el) {
         return fileId === el.id
       })
-      
-      return <img alt={'product name:' + this.props.product.name + ', product description:' + this.props.product.description} src={file.link.href} style={{"background": this.props.background}}/> || <img alt="placeholder image" src={placeholder}/>
+
+      return <img alt={'product name:' + this.props.product.name + ', product description:' + this.props.product.description} src={file.link.href} style={{"background": this.props.background}}/> || <img alt="placeholder" src={placeholder}/>
 
     } catch (e) {
-      return <img alt="placeholder image" src={placeholder}/>
+      return <img alt="placeholder" src={placeholder}/>
     }
 
   }

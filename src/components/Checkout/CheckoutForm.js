@@ -160,7 +160,7 @@ class CheckoutForm extends Component {
                               <div className="input-wrap country">
                                   <label className="required select-fallback">
                                       <span className="hide-content">Country</span>
-                                      <Field component="select" className="select-restyle" id="billing_country" required="required" name="billing_country">
+                                      <Field component="select" className="select-fallback" id="billing_country" required="required" name="billing_country">
                                           <option value>Country</option>
                                           <option value="GB">United Kingdom</option>
                                           <option value="US">The US of A</option>
@@ -213,7 +213,7 @@ class CheckoutForm extends Component {
                                   <Field component="input" required="required" placeholder="Postcode" name="shipping_postcode" type="text" aria-label="Postcode"/>
                               </label>
                               <div className="input-wrap country">
-                                  <label className="select-restyle required">
+                                  <label className="select-fallback required">
                                       <span className="hide-content">Country</span>
                                       <Field component="select" id="shipping_country" required="required" name="shipping_country">
                                           <option value></option>
@@ -244,7 +244,7 @@ class CheckoutForm extends Component {
                                   <Field component="input" required="required" placeholder="Card number" name="card_number" maxLength="23" type="number" aria-label="Card number"/>
                               </label>
                               <div className="input-wrap expiry-month">
-                                <label className="select-restyle required">
+                                <label className="select-fallback required">
                                   <span className="hide-content">Card expiry month</span>
                                   <select id="expiry-month" required="required" name="expiry-month">
                                     <option value="01">January</option>
@@ -263,7 +263,7 @@ class CheckoutForm extends Component {
                                 </label>
                               </div>
                               <div className="input-wrap expiry-year">
-                                <label className="select-restyle required">
+                                <label className="select-fallback required">
                                   <span className="hide-content">Card expiry year</span>
                                   <select id="expiry-year" required="required" name="expiry-year">
                                     <option value="2017">2017</option>

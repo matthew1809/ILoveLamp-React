@@ -78,10 +78,10 @@ class CheckoutForm extends Component {
 
     .then((order) => {
       api.OrderPay(order.data.id, PaymentTemplate)
+      api.DeleteCart()
     })
 
     .then(() => {
-
       this.props.dispatch((dispatch) => {
         dispatch({type: "Payment_Complete"})
         dispatch(push('/order-confirmation'))
@@ -92,6 +92,10 @@ class CheckoutForm extends Component {
       console.log(e)
     })
 
+    .catch((e) => {
+      console.log(e)
+    })
+    
     .catch((e) => {
       console.log(e)
     })
@@ -282,7 +286,7 @@ class CheckoutForm extends Component {
                               </div>
                               <label className="input-wrap cvc required">
                                   <span className="hide-content">CVC code</span>
-                                  <Field component="input" required="required" placeholder="CVC" maxLength="4" name="card_cvc" type="number" aria-label="CVC"/>
+                                  <Field component="input" required="required" placeholder="CVC" maxLength="4" name="card_cvc" type="tel" aria-label="CVC"/>
                               </label>
                           </div>
                           <button type="submit" className="pay" aria-live="polite">

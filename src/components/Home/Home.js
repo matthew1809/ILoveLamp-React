@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../App.css';
 import HomeHeader from './HomeHeader';
-import HomeMain from './HomeMain';
+import HomeMainSection from './HomeMainSection';
 import Footer from '../global/Footer';
 import MobileNav from '../global/Mobile/MobileNav';
 import Loading from '../global/Loading';
@@ -72,7 +72,7 @@ class Home extends Component {
         <div>
         <MobileNav />
         <HomeHeader />
-        <HomeMain />
+        <HomeMainSection />
         <Footer />
       </div>
       );

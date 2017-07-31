@@ -38,7 +38,7 @@ class HomeHeader extends Component {
                   <a className="btn" href="/" onClick={(e) => {toProducts();e.preventDefault()}}>I love lamp</a>
               </div>
           </div>
-          <div className="down-arrow"><span className="arrow">	&#10095; </span></div>
+          <div className="down-arrow" aria-hidden="true"><span className="arrow">	&#10095; </span></div>
       </header>
     )
   }

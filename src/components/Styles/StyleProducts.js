@@ -20,7 +20,7 @@ class StyleProducts extends Component {
       var CurrentCategoryProductIDs = CurrentCategory.relationships.products.data;
       var Products = this.props.products.products;
       var ProductsData = this.props.products.products.data;
-
+      
       CurrentCategoryProductIDs.forEach(function(productref) {
         var Product = ProductsData.find(function(product) {
           return product.id === productref.id
@@ -31,9 +31,10 @@ class StyleProducts extends Component {
       return (
       <div className="product-list">
       {productsToMap.map(function(product) {
+        
         return (
           <a className="product-item" href={'product/' + product.id} key={product.id}>
-              <div className="product-image" style={{"background": "#d9d9d9"}}>
+              <div className="product-image" style={{"background": product.background_colour}}>
                 <ProductImage product={product} products={Products}/>
               </div>
               <div className="overlay">

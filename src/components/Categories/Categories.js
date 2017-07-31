@@ -48,7 +48,7 @@ class Categories extends Component {
               var CatProduct = productData.find(function(product) {
                 return product.id === CatProductRef.id
               })
-
+              
               var background = CatProduct.background_colour;
 
               return (

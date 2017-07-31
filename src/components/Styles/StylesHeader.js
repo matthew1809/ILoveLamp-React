@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import Modern from '../../assets/img/modern.png';
 import Silver from '../../assets/img/silver.png';
-import Classic from '../../assets/img/bright.png';
+import Bright from '../../assets/img/bright.png';
 import Unique from '../../assets/img/unique.png';
 
 function mapStateToProps(state) {
@@ -40,12 +40,13 @@ class StylesHeader extends Component {
       break;
       case "Silver": Header = Silver;
       break;
-      case "Classic": Header = Classic;
+      case "Bright": Header = Bright;
       break;
       case "Unique": Header = Unique;
       break;
       default: Header = null;
     }
+    console.log(this.props.styles.header)
     
     return (
       <header className="medium-header light push" style={{"backgroundImage": `url(${Header})`, "backgroundRepeat": "no-repeat", "backgroundSize": "cover", "backgroundPosition": "center", "backgroundOrigin": "border-box", "backgroundAttachment": "scroll"}}>

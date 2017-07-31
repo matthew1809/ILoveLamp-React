@@ -49,6 +49,11 @@ var PaymentTemplate = {
 
 class CheckoutForm extends Component {
 
+  handleKeyDown = function (e) {
+  if (e.key === 'Enter' && e.shiftKey === false) {
+    e.preventDefault();
+  }
+};
 
   mySubmit = (values) => {
       CheckoutTemplate.customer.name = values.name;
@@ -108,7 +113,7 @@ class CheckoutForm extends Component {
       <section className="checkout">
           <div className="content">
               <CheckoutSummary />
-              <form className="checkout-form"  noValidate onSubmit={this.props.handleSubmit(this.mySubmit)}>
+              <form className="checkout-form"  noValidate onSubmit={this.props.handleSubmit(this.mySubmit)} onKeyDown={(e) => { this.handleKeyDown(e); }}>
                   <fieldset className="details">
                       <div className="form-header">
                           <h2>Your details</h2>
@@ -220,7 +225,7 @@ class CheckoutForm extends Component {
                                   <label className="select-fallback required">
                                       <span className="hide-content">Country</span>
                                       <Field component="select" id="shipping_country" required="required" name="shipping_country">
-                                          <option value></option>
+                                          <option value>Country</option>
                                           <option value="GB">United Kingdom</option>
                                           <option value="US">The US of A</option>
                                           <option value="FR">France</option>

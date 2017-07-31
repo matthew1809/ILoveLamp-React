@@ -44,7 +44,7 @@ class StylesHeader extends Component {
       break;
       case "Unique": Header = Unique;
       break;
-      default: Header = Modern;
+      default: Header = null;
     }
     
     return (

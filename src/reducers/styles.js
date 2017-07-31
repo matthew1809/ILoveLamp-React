@@ -1,6 +1,6 @@
 const initialState = {
-  style: "No Categories Set Up",
-  header: "Modern",
+  style: "",
+  header: null,
   error: null
 }
 

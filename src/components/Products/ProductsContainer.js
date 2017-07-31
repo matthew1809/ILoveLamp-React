@@ -14,6 +14,16 @@ const mapStateToProps = state => {
 }
 
 class ProductsContainer extends Component {
+  
+  componentWillMount() {
+       const script = document.createElement("script");
+
+       script.src = "../../js/production.min.js";
+       script.async = false;
+
+       document.body.appendChild(script);
+   }
+  
 
   // a react lifecycle event, read more at http://busypeoples.github.io/post/react-component-lifecycle/
   componentDidMount() {

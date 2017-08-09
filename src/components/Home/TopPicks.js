@@ -58,7 +58,7 @@ class TopPicks extends Component {
                     <div className="product-image" style={{"background": background}} >
                       <ProductImage product={top_pick} products={products}/>
                     </div>
-                    <div className="overlay" aria-hidden="true">
+                    <div className="overlay">
                         <div className="overlay-background" style={{"background": "#ad9d8b"}}></div>
                         <div className="overlay-content">
                             <div className="title">{top_pick.name}</div>

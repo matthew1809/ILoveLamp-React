@@ -55,7 +55,7 @@ class Categories extends Component {
                 <a className="styles-item" href="styles" style={{"background": background}} name={category.name} key={category.id} onClick={(e) => {ChangeStyle(category.name)}}>
                   <h3  onClick={(e) => {e.preventDefault()}}>{category.name}<span className="hide-content"> lamps</span></h3>
                   <ProductImage product={CatProduct} products={products} alt={product.description} aria-hidden="true"/>
-                  <div className="overlay fake-btn" aria-hidden="true" style={{"background": "#4d4d4d"}} >Shop <span className="hide-content">our {category.name} collection </span>now</div>
+                  <div className="overlay fake-btn" style={{"background": "#4d4d4d"}} >Shop <span className="hide-content">our {category.name} collection </span>now</div>
                 </a>
               )
             }

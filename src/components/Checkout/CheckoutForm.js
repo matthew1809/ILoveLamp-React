@@ -170,7 +170,7 @@ class CheckoutForm extends Component {
                                   <label className="required select-fallback">
                                       <span className="hide-content">Country</span>
                                       <Field component="select" id="billing_country" required="required" name="billing_country">
-                                          <option value>Country</option>
+                                          <option value="">Country</option>
                                           <option value="AF">Afghanistan</option>
                                           <option value="AX">Åland Islands</option>
                                           <option value="AL">Albania</option>
@@ -433,10 +433,6 @@ class CheckoutForm extends Component {
                       </div>
                       <div className="form-content">
                           <div className="form-fields">
-                              <label className="replace-checkbox same-as-billing">
-                                  <input component="input" type="checkbox" name="use-billing"/>
-                                  <span className="checkbox-label"><span className="hide-content"> Is your shipping address the </span>Same as<span className="hide-content">your </span> billing address?</span>
-                              </label>
                               <label className="input-wrap firstname required">
                                   <span className="hide-content">First name</span>
                                   <Field component="input" required="required" placeholder="First Name" name="shipping_firstname" type="text" aria-label="First name"/>
@@ -469,7 +465,7 @@ class CheckoutForm extends Component {
                                   <label className="select-fallback required">
                                       <span className="hide-content">Country</span>
                                       <Field component="select" id="shipping_country" required="required" name="shipping_country">
-                                          <option value>Country</option>
+                                          <option value="">Country</option>
                                           <option value="AF">Afghanistan</option>
                                           <option value="AX">Åland Islands</option>
                                           <option value="AL">Albania</option>
@@ -738,7 +734,7 @@ class CheckoutForm extends Component {
                               </label>
                               <label className="input-wrap card required">
                                   <span className="hide-content">Card number</span>
-                                  <Field component="input" required="required" placeholder="Card number" name="card_number" maxLength="23" type="tel" aria-label="Card number"/>
+                                  <Field component="input" required="required" placeholder="Card number" name="card-number" maxLength="23" type="tel" aria-label="Card number"/>
                               </label>
                               <div className="input-wrap expiry-month">
                                 <label className="select-fallback required">

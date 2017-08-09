@@ -142,7 +142,7 @@ class CheckoutForm extends Component {
                                 <span className="hide-content">First name</span>
                                   <Field component="input" required="required" placeholder="First Name" name="billing_firstname" type="text" aria-label="First name"/>
                               </label>
-                              <label class="input-wrap lastname required">
+                              <label className="input-wrap lastname required">
                                   <span className="hide-content">Last name</span>
                                   <Field component="input" required="required" placeholder="Last Name" name="billing_lastname" type="text" aria-label="Last name"/>
                               </label>
@@ -733,11 +733,11 @@ class CheckoutForm extends Component {
                       <div className="form-content">
                           <div className="form-fields">
                               <label className="input-wrap name">
-                                  <span class="hide-content">Name on card</span>
+                                  <span className="hide-content">Name on card</span>
                                   <Field component="input" required="required" placeholder="Name on card" name="card_name" type="text" aria-label="Name on card"/>
                               </label>
                               <label className="input-wrap card required">
-                                  <span class="hide-content">Card number</span>
+                                  <span className="hide-content">Card number</span>
                                   <Field component="input" required="required" placeholder="Card number" name="card_number" maxLength="23" type="tel" aria-label="Card number"/>
                               </label>
                               <div className="input-wrap expiry-month">

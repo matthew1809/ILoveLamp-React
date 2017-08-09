@@ -15,7 +15,11 @@ class MenuButton extends Component {
     
     if (['products', 'checkout', 'cart', 'order-confirmation'].includes(parsedPath)) {
       menu_btn_colour = "";
-    } else {
+    } 
+    else if (parsedPath.includes('product')) {
+      menu_btn_colour = "";
+    }
+    else {
       menu_btn_colour = "light";
     }
 

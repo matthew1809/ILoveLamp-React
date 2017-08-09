@@ -13,7 +13,7 @@ class MenuButton extends Component {
 
     const parsedPath = this.props.router.location.pathname.substring(1);
     
-    if (['product', 'checkout', 'cart', 'order-confirmation'].includes(parsedPath)) {
+    if (['products', 'checkout', 'cart', 'order-confirmation'].includes(parsedPath)) {
       menu_btn_colour = "";
     } else {
       menu_btn_colour = "light";

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SingleProduct from './SingleProduct';
 import Footer from '../global/Footer';
 import CartHeader from '../Cart/CartHeader';
+import ProductHeader from './ProductHeader';
 import { connect } from 'react-redux';
 import Loading from '../global/Loading';
 import MobileNav from '../global/Mobile/MobileNav';
@@ -43,7 +44,7 @@ class Product extends Component {
       return (
         <div>
           <MobileNav />
-          <CartHeader />
+          <ProductHeader />
           <SingleProduct />
           <Footer />
         </div>

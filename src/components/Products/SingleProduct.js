@@ -14,7 +14,7 @@ class SingleProduct extends Component {
 
   render() {
 
-    var products = this.props.products.products;
+      var products = this.props.products.products;
 
       var ID = this.props.router.location.pathname.slice(9, 100)
 

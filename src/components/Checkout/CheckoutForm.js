@@ -169,7 +169,7 @@ class CheckoutForm extends Component {
                               <div className="input-wrap country">
                                   <label className="required select-fallback">
                                       <span className="hide-content">Country</span>
-                                      <Field component="select" className="select-fallback" id="billing_country" required="required" name="billing_country">
+                                      <Field component="select" id="billing_country" required="required" name="billing_country">
                                           <option value>Country</option>
                                           <option value="AF">Afghanistan</option>
                                           <option value="AX">Åland Islands</option>

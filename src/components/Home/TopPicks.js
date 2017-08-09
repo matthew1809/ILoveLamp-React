@@ -45,8 +45,14 @@ class TopPicks extends Component {
           <div>
             {TopPicksToMap.map(function(top_pick) {
 
-              var background = top_pick.background_colour;
-
+              let background;
+              
+              if(top_pick.background_colour) {
+                background = top_pick.background_colour
+              } else {
+                background = '#d9d9d9';
+              };
+              
               var isNew = null;
 
               if(top_pick.new === true) {

@@ -21,7 +21,15 @@ class AllProducts extends Component {
             <div className="content">
               <div className="product-list">
                 {products.data.map(function(product) {
-                  var background = product.background_colour;
+                  console.log(product.background_colour);
+                  
+                  let background;
+                  if(product.background_colour) {
+                    background = product.background_colour
+                  } else {
+                    background = '#d9d9d9';
+                  }
+                  
                   return (
                     <a className="product-item" href={"/product/" + product.id} key={product.id} >
                       <div className="product-image" style={{"background": background}}>

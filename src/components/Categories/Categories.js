@@ -49,7 +49,13 @@ class Categories extends Component {
                 return product.id === CatProductRef.id
               })
               
-              var background = CatProduct.background_colour;
+              let background;
+              
+              if(CatProduct.background_colour) {
+                background = CatProduct.background_colour
+              } else {
+                background = '#d9d9d9';
+              };
 
               return (
                 <a className="styles-item" href="styles" style={{"background": background}} name={category.name} key={category.id} onClick={(e) => {ChangeStyle(category.name)}}>

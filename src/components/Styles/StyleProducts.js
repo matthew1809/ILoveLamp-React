@@ -32,9 +32,18 @@ class StyleProducts extends Component {
       <div className="product-list">
       {productsToMap.map(function(product) {
         
+        
+        let background;
+        
+        if(product.background_colour) {
+          background = product.background_colour
+        } else {
+          background = '#d9d9d9';
+        };
+        
         return (
           <a className="product-item" href={'product/' + product.id} key={product.id}>
-              <div className="product-image" style={{"background": product.background_colour}}>
+              <div className="product-image" style={{"background": background}}>
                 <ProductImage product={product} products={Products}/>
               </div>
               <div className="overlay">

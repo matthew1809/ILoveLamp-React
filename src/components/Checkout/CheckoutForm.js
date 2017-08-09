@@ -781,7 +781,7 @@ class CheckoutForm extends Component {
                           <button type="submit" className="pay" aria-live="polite">
                             <div className="loading-icon">
                                 <span className="hide-content">Processing</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.7 46.9">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.7 46.9" aria-hidden="true">
                                     <path fill="currentColor" d="M47.8,15.9c0,2.8-1,5.6-3.2,7.6L26.4,41.7L8.1,23.5c-4.3-4.3-4.3-11.1,0-15.4c2.1-2.1,4.9-3.2,7.7-3.2c2.8,0,5.6,1,7.6,3.2
                             l2.9,2.9l2.9-2.9c4.3-4.3,11.1-4.3,15.4,0C46.7,10.3,47.8,13.1,47.8,15.9z"/>
                                 </svg>

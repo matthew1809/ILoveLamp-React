@@ -8,28 +8,12 @@ function mapStateToProps(state) {
 class MenuButton extends Component {
 
   render() {
-    console.log(this.props.router.location.pathname)
+
     let menu_btn_colour;
-    // if(this.props.router.location.pathname.includes("product")) {
-    //   menu_btn_colour = "";
-    // }
-    // else if(this.props.router.location.pathname.includes("styles")) {
-    //   menu_btn_colour = "";
-    // }
-    // else if(this.props.router.location.pathname.includes("cart")) {
-    //   menu_btn_colour = "";
-    // }
-    // else if(this.props.router.location.pathname.includes("checkout")) {
-    //   menu_btn_colour = "";
-    // }
-    // else if(this.props.router.location.pathname.includes("order-confirmation")) {
-    //   menu_btn_colour = "";
-    // }
-    // else {
-    //   menu_btn_colour = "light";
-    // };
+
+    const parsedPath = this.props.router.location.pathname.substring(1);
     
-    if (['/product', '/checkout', '/cart', 'order-confirmation'].includes(this.props.router.location.pathname)) {
+    if (['product', 'checkout', 'cart', 'order-confirmation'].includes(parsedPath)) {
       menu_btn_colour = "";
     } else {
       menu_btn_colour = "light";

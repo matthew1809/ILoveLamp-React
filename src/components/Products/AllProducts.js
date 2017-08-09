@@ -15,21 +15,6 @@ class AllProducts extends Component {
 
       var products = this.props.products.products;
 
-      var OverlayIsHidden = this.props.css.OverlayIsHidden;
-
-      var ChangeHidden = (event) => {
-        if(event === "unhide") {
-          this.props.dispatch((dispatch) => {
-            dispatch({type: "Unhide_Overlay"})
-          })
-        }
-        if(event === "hide") {
-          this.props.dispatch((dispatch) => {
-            dispatch({type: "hide_Overlay"})
-          })
-        }
-      };
-
       return (
         <main role="main" id="container" className="main-container push">
           <section className="products">
@@ -38,11 +23,11 @@ class AllProducts extends Component {
                 {products.data.map(function(product) {
                   var background = product.background_colour;
                   return (
-                    <a className="product-item" href={"/product/" + product.id} key={product.id} onMouseOver={() => {ChangeHidden("unhide")}} onMouseLeave={() => {ChangeHidden("hide")}}>
+                    <a className="product-item" href={"/product/" + product.id} key={product.id} >
                       <div className="product-image" style={{"background": background}}>
                           <ProductImage product={product} products={products}/>
                       </div>
-                      <div className={`overlay ${OverlayIsHidden}`}>
+                      <div className='overlay'>
                         <div className="overlay-background" style={{"background": "#aaaaaa"}}></div>
                         <div className="overlay-content">
                           <div className="title">{product.name}</div>

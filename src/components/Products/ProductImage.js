@@ -19,12 +19,24 @@ class ProductImage extends Component {
     };
     
     var isThereAFile = (product) => {
-      fileId = this.props.product.relationships.files.data[0].id;
-      file = this.props.products.included.files.find(function (el) {
-        return fileId === el.id
-      })      
-        return <img alt={this.props.product.name + ', ' + this.props.product.description} src={file.link.href} style={{"background": this.props.background}}/> || <img alt="placeholder" src={placeholder}/>
-    };
+      
+      if(this.props.product.relationships.files) {
+        
+        fileId = this.props.product.relationships.files.data[0].id;
+        
+        file = this.props.products.included.files.find(function (el) {
+          return fileId === el.id
+        })    
+          
+          return <img alt={this.props.product.name + ', ' + this.props.product.description} src={file.link.href} style={{"background": this.props.background}}/>
+      }
+      
+      else {
+        return (
+          <img alt="placeholder" src={placeholder}/>
+        )
+      }
+    }
   
     try {
       return isThereAMainImage(this.props.product)

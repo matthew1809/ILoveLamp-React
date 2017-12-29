@@ -32,9 +32,9 @@ class AllProducts extends Component {
                   
                   return (
                     <a className="product-item" href={"/product/" + product.id} key={product.id} >
-                      <div className="product-image" style={{"background": background}}>
-                          <ProductImage product={product} products={products}/>
-                      </div>
+                      // <div className="product-image" style={{"background": background}}>
+                      //     <ProductImage product={product} products={products}/>
+                      // </div>
                       <div className='overlay'>
                         <div className="overlay-background" style={{"background": "#aaaaaa"}}></div>
                         <div className="overlay-content">

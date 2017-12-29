@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import '../../App.css';
 import HomeHeader from './HomeHeader';
-import HomeIntro from './HomeIntro';
 import HomeMainSection from './HomeMainSection';
 import Footer from '../global/Footer';
 import MobileNav from '../global/Mobile/MobileNav';
@@ -21,7 +21,7 @@ class Home extends Component {
     script.src = "../../js/production.min.js";
     script.async = false;
 
-    // document.body.appendChild(script);
+    document.body.appendChild(script);
   }
 
 
@@ -80,18 +80,20 @@ class Home extends Component {
     if (this.props.collections.collections !== null && this.props.products.products !== null && this.props.categories.categories !== null) {
       return (
         <div>
+          <MobileNav />
           <HomeHeader />
-          <HomeIntro />
           <HomeMainSection />
+          <Footer />
         </div>
       );
     }
     else {
       return (
         <div>
+          <MobileNav />
           <HomeHeader />
-          <HomeIntro />
-          <HomeMainSection />
+          <Loading />
+          <Footer />
         </div>
       );
     }

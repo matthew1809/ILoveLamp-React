@@ -22,6 +22,6 @@ export default (state = initialState, action) => {
       };
 
     default:
-      return { ...state, fetching: false, error: action.payload };
+      return { ...state, fetching: false };
   }
 };

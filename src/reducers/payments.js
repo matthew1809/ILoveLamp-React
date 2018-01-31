@@ -16,6 +16,6 @@ export default (state = initialState, action) => {
       return { ...state, processing: false, complete: true };
 
     default:
-      return { ...state, error: action.payload };
+      return { ...state };
   }
 };

@@ -16,6 +16,6 @@ export default (state = initialState, action) => {
       return { ...state, style: action.style, header: action.style };
 
     default:
-      return { ...state, error: action.style };
+      return { ...state };
   }
 };

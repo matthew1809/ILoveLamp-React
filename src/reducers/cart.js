@@ -37,6 +37,6 @@ export default (state = initialState, action) => {
       };
 
     default:
-      return { ...state, error: action.payload, newQuantity: false };
+      return { ...state, newQuantity: false };
   }
 };

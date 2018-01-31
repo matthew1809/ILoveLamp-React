@@ -17,7 +17,7 @@ import { routerMiddleware } from 'react-router-redux';
 import rootReducer from './reducers';
 
 // import moltin API wrapper for use with Redux
-import api from './utils/moltin';
+import * as api from './utils/moltin';
 
 // create and export history for router
 export const history = createHistory();

@@ -1,21 +1,21 @@
-const initialState = {
-processing: false,
-complete: false,
-error: null
-}
+export const SUBMIT_PAYMENT = 'payments/SUBMIT_PAYMENT';
+export const PAYMENT_COMPLETE = 'payments/PAYMENT_COMPLETE';
 
-const PaymentsReducer = (state=initialState, action) => {
-  switch (action.type) {
-    case "Submit_Payment": {
-      return {...state, processing: true, complete: false};
-    }
-    case "Payment_Complete": {
-      return {...state, processing: false, complete: true};
-    }
-    default: {
-      return {...state, error: action.payload};
-    }
-  }
+const initialState = {
+  processing: false,
+  complete: false,
+  error: null
 };
 
-export default PaymentsReducer;
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case SUBMIT_PAYMENT:
+      return { ...state, processing: true, complete: false };
+
+    case PAYMENT_COMPLETE:
+      return { ...state, processing: false, complete: true };
+
+    default:
+      return { ...state, error: action.payload };
+  }
+};

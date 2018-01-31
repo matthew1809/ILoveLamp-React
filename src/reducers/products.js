@@ -1,26 +1,27 @@
+export const FETCH_PRODUCTS_START = 'products/FETCH_PRODUCTS_START';
+export const FETCH_PRODUCTS_END = 'products/FETCH_PRODUCTS_END';
+
 const initialState = {
   fetching: false,
   fetched: false,
   products: null,
   error: null
-}
-
-const ProductsReducer = (state=initialState, action) => {
-  switch (action.type) {
-    case "Fetch_Products_Start": {
-      return {...state, fetching: true};
-    }
-    case "Fetch_Products_End": {
-      return {...state,
-         fetching: false,
-         fetched: true,
-         products: action.payload
-       };
-    }
-    default: {
-      return {...state, fetching: false, error: action.payload};
-    }
-  }
 };
 
-export default ProductsReducer;
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case FETCH_PRODUCTS_START:
+      return { ...state, fetching: true };
+
+    case FETCH_PRODUCTS_END:
+      return {
+        ...state,
+        fetching: false,
+        fetched: true,
+        products: action.payload
+      };
+
+    default:
+      return { ...state, fetching: false, error: action.payload };
+  }
+};

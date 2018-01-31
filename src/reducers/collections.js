@@ -1,26 +1,27 @@
+export const FETCH_COLLECTIONS_START = 'collections/FETCH_COLLECTIONS_START';
+export const FETCH_COLLECTIONS_END = 'collections/FETCH_COLLECTIONS_END';
+
 const initialState = {
   fetching: false,
   fetched: false,
   collections: null,
   error: null
-}
-
-const CollectionsReducer = (state=initialState, action) => {
-  switch (action.type) {
-    case "Fetch_Collections_Start": {
-      return {...state, fetching: true};
-    }
-    case "Fetch_Collections_End": {
-      return {...state,
-         fetching: false,
-         fetched: true,
-         collections: action.payload
-       };
-    }
-    default: {
-      return {...state, fetching: false, error: action.payload};
-    }
-  }
 };
 
-export default CollectionsReducer;
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case FETCH_COLLECTIONS_START:
+      return { ...state, fetching: true };
+
+    case FETCH_COLLECTIONS_END:
+      return {
+        ...state,
+        fetching: false,
+        fetched: true,
+        collections: action.payload
+      };
+
+    default:
+      return { ...state, fetching: false, error: action.payload };
+  }
+};

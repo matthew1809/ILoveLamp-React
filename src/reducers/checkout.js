@@ -1,17 +1,16 @@
-const initialState = {
-form: null,
-error: null
-}
+export const SUBMIT_FORM = 'checkout/SUBMIT_FORM';
 
-const CheckoutReducer = (state=initialState, action) => {
-  switch (action.type) {
-    case "Submit_Form": {
-      return {...state, form: action.payload};
-    }
-    default: {
-      return {...state, error: action.payload};
-    }
-  }
+const initialState = {
+  form: null,
+  error: null
 };
 
-export default CheckoutReducer;
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case SUBMIT_FORM:
+      return { ...state, form: action.payload };
+
+    default:
+      return { ...state, error: action.payload };
+  }
+};

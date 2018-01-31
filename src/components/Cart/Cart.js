@@ -13,7 +13,7 @@ import {
   FETCH_PRODUCTS_END
 } from '../../reducers/products';
 
-var api = require('../../utils/moltin.js');
+var api = require('../../moltin.js');
 
 function mapStateToProps(state) {
   return state;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import MailingList from '../global/MailingList';
 import CheckoutSummary from './CheckoutSummary';
 import { Field, reduxForm } from 'redux-form';
-import * as api from '../../utils/moltin';
+import * as api from '../../moltin';
 import { push } from 'react-router-redux';
 import { connect } from 'react-redux';
 

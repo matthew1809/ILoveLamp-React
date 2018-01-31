@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import MailingList from '../global/MailingList';
 import { connect } from 'react-redux';
 import ProductImage from './ProductImage';
-import * as api from '../../utils/moltin';
+import * as api from '../../moltin';
 
 import { UPDATE_QUANTITY } from '../../reducers/product';
 import {

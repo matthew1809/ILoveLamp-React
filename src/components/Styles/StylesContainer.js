@@ -19,7 +19,7 @@ import {
 } from '../../reducers/categories';
 import { INITIAL_STYLE } from '../../reducers/styles';
 
-var api = require('../../utils/moltin.js');
+var api = require('../../moltin.js');
 
 function mapStateToProps(state) {
   return state;

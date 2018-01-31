@@ -22,7 +22,7 @@ import {
 } from '../../reducers/collections';
 
 // import the moltin api utility
-var api = require('../../utils/moltin.js');
+var api = require('../../moltin.js');
 
 function mapStateToProps(state) {
   return state;

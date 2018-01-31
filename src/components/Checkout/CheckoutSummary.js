@@ -9,7 +9,7 @@ import {
 } from '../../reducers/products';
 import { FETCH_CART_START, FETCH_CART_END } from '../../reducers/cart';
 
-var api = require('../../utils/moltin.js');
+var api = require('../../moltin.js');
 
 function mapStateToProps(state) {
   return state;

@@ -18,9 +18,9 @@ export const GetProduct = ID => Moltin.Products.Get(ID);
 
 export const GetCategories = () => Moltin.Categories.With('products').All();
 
-export const GetCollections = () => Moltin.Collections.With('products').All();
-
 export const GetCategory = ID => Moltin.Categories.Get(ID);
+
+export const GetCollections = () => Moltin.Collections.With('products').All();
 
 export const GetBrands = () => Moltin.Brands.All();
 

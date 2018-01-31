@@ -80,15 +80,15 @@ class CartItems extends Component {
             });
 
           var product = productArray[0];
-          
+
           var background = product.background_colour;
-          
+
           var TotalPriceHidden = "hidden"
-          
+
           if(item.quantity > 1) {
             TotalPriceHidden = ""
           };
-          
+
           return (
             <div className="cart-item" key={item.id}>
 

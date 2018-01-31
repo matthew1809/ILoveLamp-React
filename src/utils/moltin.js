@@ -6,73 +6,43 @@ if (process.env.REACT_APP_MOLTIN_CLIENT_ID) {
   client_id = process.env.REACT_APP_MOLTIN_CLIENT_ID;
 }
 
-var exports = module.exports = {};
-
 const Moltin = MoltinGateway({
   client_id,
   application: 'react-demo-store'
 });
 
-exports.GetProducts = function() {
-  return Moltin.Products.With('files, main_images, collections').All()
-};
+export const GetProducts = () =>
+  Moltin.Products.With('files, main_images, collections').All();
 
-exports.GetProduct = function(ID) {
-  return Moltin.Products.Get(ID)
-}
+export const GetProduct = ID => Moltin.Products.Get(ID);
 
-exports.GetCategories = function() {
-  return Moltin.Categories.With('products').All()
-}
+export const GetCategories = () => Moltin.Categories.With('products').All();
 
-exports.GetCollections = function() {
-  return Moltin.Collections.With('products').All()
-}
+export const GetCollections = () => Moltin.Collections.With('products').All();
 
-exports.GetCategory = function(ID) {
-  return Moltin.Categories.Get(ID)
-}
+export const GetCategory = ID => Moltin.Categories.Get(ID);
 
-exports.GetBrands = function() {
-  return Moltin.Brands.All()
-}
+export const GetBrands = () => Moltin.Brands.All();
 
-exports.GetFile = function(ID) {
-  return Moltin.Files.Get(ID)
-}
+export const GetFile = ID => Moltin.Files.Get(ID);
 
-exports.AddCart = function(id, quantity) {
-  return Moltin.Cart.AddProduct(id, quantity)
-}
+export const AddCart = (id, quantity) => Moltin.Cart.AddProduct(id, quantity);
 
-exports.UpdateCartPlus = function(ID, quantity) {
-  return Moltin.Cart.UpdateItemQuantity(ID, quantity + 1)
-}
+export const UpdateCartPlus = (ID, quantity) =>
+  Moltin.Cart.UpdateItemQuantity(ID, quantity + 1);
 
-exports.UpdateCartMinus = function(ID, quantity) {
-  return Moltin.Cart.UpdateItemQuantity(ID, quantity - 1)
-}
+export const UpdateCartMinus = (ID, quantity) =>
+  Moltin.Cart.UpdateItemQuantity(ID, quantity - 1);
 
-exports.UpdateCart = function(ID, quantity) {
-  return Moltin.Cart.UpdateItemQuantity(ID, quantity)
-}
+export const UpdateCart = (ID, quantity) =>
+  Moltin.Cart.UpdateItemQuantity(ID, quantity);
 
-exports.GetCartItems = function() {
-  return Moltin.Cart.Items()
-}
+export const GetCartItems = () => Moltin.Cart.Items();
 
-exports.Checkout = function(data) {
-  return Moltin.Cart.Checkout(data)
-}
+export const Checkout = data => Moltin.Cart.Checkout(data);
 
-exports.GetOrder = function(ID) {
-  return Moltin.Orders.Get(ID)
-}
+export const GetOrder = ID => Moltin.Orders.Get(ID);
 
-exports.OrderPay = function(ID, data) {
-  return Moltin.Orders.Payment(ID, data)
-}
+export const OrderPay = (ID, data) => Moltin.Orders.Payment(ID, data);
 
-exports.DeleteCart = function() {
-  return Moltin.Cart.Delete()
-};
+export const DeleteCart = () => Moltin.Cart.Delete();

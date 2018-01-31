@@ -1,5 +1,8 @@
+// import the ability to modify browser history within our router
+import createHistory from 'history/createBrowserHistory';
+
 // import our logger for redux
-import { createLogger } from "redux-logger";
+import { createLogger } from 'redux-logger';
 
 // import a library to handle async with redux
 import thunk from 'redux-thunk';
@@ -13,14 +16,14 @@ import { routerMiddleware } from 'react-router-redux';
 // import the already combined reducers for redux to use
 import rootReducer from './reducers';
 
-// import ability to create a browser history for our router to use
-import history from './history';
-
 // import moltin API wrapper for use with Redux
-import api from './utils/moltin'
+import api from './utils/moltin';
+
+// create and export history for router
+export const history = createHistory();
 
 // combine the middlewares we're using into a constant so that it can be used by our store
-const middleware = [thunk.withExtraArgument(api), routerMiddleware(history)]
+const middleware = [thunk.withExtraArgument(api), routerMiddleware(history)];
 
 // declare any enhancers here
 const enhancers = [];
@@ -42,4 +45,4 @@ const composedEnhancers = compose(applyMiddleware(...middleware), ...enhancers);
 // create our redux store using our reducers and our middleware, and export it for use in index.js
 const store = createStore(rootReducer, composedEnhancers);
 
-export default store
+export default store;

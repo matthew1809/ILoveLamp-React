@@ -4,12 +4,12 @@ import { connect } from 'react-redux';
 import ProductImage from './ProductImage';
 import * as api from '../../moltin';
 
-import { UPDATE_QUANTITY } from '../../reducers/product';
+import { UPDATE_QUANTITY } from '../../ducks/product';
 import {
   FETCH_CART_START,
   FETCH_CART_END,
   CART_UPDATED
-} from '../../reducers/cart';
+} from '../../ducks/cart';
 
 const mapStateToProps = state => {
   return state;

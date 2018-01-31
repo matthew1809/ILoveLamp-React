@@ -10,7 +10,7 @@ import MobileNav from '../global/Mobile/MobileNav';
 import {
   FETCH_PRODUCTS_START,
   FETCH_PRODUCTS_END
-} from '../../reducers/products';
+} from '../../ducks/products';
 
 var api = require('../../moltin.js');
 

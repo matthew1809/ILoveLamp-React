@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 
-import { FETCH_CART_START, FETCH_CART_END } from '../../reducers/cart';
+import { FETCH_CART_START, FETCH_CART_END } from '../../ducks/cart';
 
 var api = require('../../moltin.js');
 

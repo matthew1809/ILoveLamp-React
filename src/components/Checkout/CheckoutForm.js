@@ -6,7 +6,7 @@ import * as api from '../../moltin';
 import { push } from 'react-router-redux';
 import { connect } from 'react-redux';
 
-import { SUBMIT_PAYMENT, PAYMENT_COMPLETE } from '../../reducers/payments';
+import { SUBMIT_PAYMENT, PAYMENT_COMPLETE } from '../../ducks/payments';
 
 function mapStateToProps(state) {
   return { push: state.push };

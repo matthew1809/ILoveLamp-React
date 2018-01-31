@@ -11,15 +11,15 @@ import { connect } from 'react-redux';
 import {
   FETCH_PRODUCTS_START,
   FETCH_PRODUCTS_END
-} from '../../reducers/products';
+} from '../../ducks/products';
 import {
   FETCH_CATEGORIES_START,
   FETCH_CATEGORIES_END
-} from '../../reducers/categories';
+} from '../../ducks/categories';
 import {
   FETCH_COLLECTIONS_START,
   FETCH_COLLECTIONS_END
-} from '../../reducers/collections';
+} from '../../ducks/collections';
 
 // import the moltin api utility
 var api = require('../../moltin.js');

@@ -14,7 +14,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
 
 // import the already combined reducers for redux to use
-import rootReducer from './reducers';
+import rootReducer from './ducks';
 
 // import moltin API wrapper for use with Redux
 import * as api from './moltin';

@@ -6,8 +6,8 @@ import Loading from '../global/Loading';
 import {
   FETCH_PRODUCTS_START,
   FETCH_PRODUCTS_END
-} from '../../reducers/products';
-import { FETCH_CART_START, FETCH_CART_END } from '../../reducers/cart';
+} from '../../ducks/products';
+import { FETCH_CART_START, FETCH_CART_END } from '../../ducks/cart';
 
 var api = require('../../moltin.js');
 

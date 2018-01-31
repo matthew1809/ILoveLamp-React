@@ -12,12 +12,12 @@ import MobileNav from '../global/Mobile/MobileNav';
 import {
   FETCH_PRODUCTS_START,
   FETCH_PRODUCTS_END
-} from '../../reducers/products';
+} from '../../ducks/products';
 import {
   FETCH_CATEGORIES_START,
   FETCH_CATEGORIES_END
-} from '../../reducers/categories';
-import { INITIAL_STYLE } from '../../reducers/styles';
+} from '../../ducks/categories';
+import { INITIAL_STYLE } from '../../ducks/styles';
 
 var api = require('../../moltin.js');
 

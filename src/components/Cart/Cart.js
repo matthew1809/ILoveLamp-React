@@ -7,11 +7,11 @@ import CartItems from './CartItems';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 
-import { FETCH_CART_START, FETCH_CART_END } from '../../reducers/cart';
+import { FETCH_CART_START, FETCH_CART_END } from '../../ducks/cart';
 import {
   FETCH_PRODUCTS_START,
   FETCH_PRODUCTS_END
-} from '../../reducers/products';
+} from '../../ducks/products';
 
 var api = require('../../moltin.js');
 

@@ -4,10 +4,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Development
 
-1. Clone this repository & `cd` into it.
-2. Run `npm install`.
-3. In `src/moltin.js`, on line 3, replace `client_id` with your own moltin client_id
-4. Run `npm start`.
+```bash
+git clone https://github.com/moltin/react-demo-store.git
+cd react-demo-store
+yarn #or npm install
+yarn start # or npm start
+```
+
+Note: You will want to change the `client_id` inside `src/moltin.js` with your own moltin store credentials.
+
+This demo store uses the Redux "[ducks](https://github.com/erikras/ducks-modular-redux)" approach to bundling reducers and actions.
 
 ## Deployment
 

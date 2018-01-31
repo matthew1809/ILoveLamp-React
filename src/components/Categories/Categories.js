@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ProductImage from '../Products/ProductImage';
 import { push } from 'react-router-redux';
 
-import { CHANGE_STYLE } from '../../reducers/styles';
+import { CHANGE_STYLE } from '../../ducks/styles';
 
 function mapStateToProps(state) {
   return state;

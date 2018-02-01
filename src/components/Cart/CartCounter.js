@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
+import { Link } from 'react-router-dom';
 
 import { FETCH_CART_START, FETCH_CART_END } from '../../ducks/cart';
 
@@ -25,12 +25,6 @@ class CartCounter extends Component {
   }
 
   render() {
-    const toCart = () => {
-      this.props.dispatch(dispatch => {
-        dispatch(push('/cart'));
-      });
-    };
-
     if (this.props.cart.fetched === true) {
       var quant = 0;
       var items = this.props.cart.cart.data;
@@ -43,8 +37,8 @@ class CartCounter extends Component {
     }
 
     return (
-      <a href="cart" className="cart" aria-live="polite">
-        <span className="cart-name" onClick={() => toCart()} aria-hidden="true">
+      <Link to="/cart" className="cart" aria-live="polite">
+        <span className="cart-name" aria-hidden="true">
           Cart (
         </span>
         <span className="hide-content">The cart contains </span>
@@ -53,7 +47,7 @@ class CartCounter extends Component {
         <span className="cart-name" aria-hidden="true">
           )
         </span>
-      </a>
+      </Link>
     );
   }
 }

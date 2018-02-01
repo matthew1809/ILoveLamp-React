@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
 import { Link } from 'react-router-dom';
 
 import MobileNav from '../global/Mobile/MobileNav';
@@ -10,20 +9,16 @@ import Footer from '../global/Footer';
 import CartHeader from './CartHeader';
 import CartItems from './CartItems';
 
+import { GetProducts } from '../../ducks/products';
 import { GetCartItems } from '../../ducks/cart';
 
 class Cart extends Component {
   componentDidMount() {
+    this.props.GetProducts();
     this.props.GetCartItems();
   }
 
   render() {
-    var toCheckout = () => {
-      this.props.dispatch(dispatch => {
-        dispatch(push('/checkout'));
-      });
-    };
-
     const { cart, products } = this.props;
 
     if (
@@ -57,16 +52,9 @@ class Cart extends Component {
                       </span>{' '}
                       <span className="price">{subtotal}</span>
                     </div>
-                    <button
-                      type="submit"
-                      className="submit"
-                      href="/checkout"
-                      onClick={e => {
-                        toCheckout();
-                        e.preventDefault();
-                      }}>
+                    <Link className="btn submit" to="/checkout">
                       Checkout
-                    </button>
+                    </Link>
                   </form>
                 </div>
               </section>
@@ -140,6 +128,7 @@ const mapStateToProps = ({ products, cart }) => ({
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
+      GetProducts,
       GetCartItems
     },
     dispatch

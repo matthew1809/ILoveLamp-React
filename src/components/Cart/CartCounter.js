@@ -25,15 +25,12 @@ class CartCounter extends Component {
   }
 
   render() {
+    let quantity = 0;
+
     if (this.props.cart.fetched === true) {
-      var quant = 0;
       var items = this.props.cart.cart.data;
 
-      items.forEach(function(item) {
-        quant = quant + item.quantity;
-      });
-    } else {
-      quant = 0;
+      quantity = items.reduce((sum, item) => sum + item.quantity, 0);
     }
 
     return (
@@ -42,7 +39,7 @@ class CartCounter extends Component {
           Cart (
         </span>
         <span className="hide-content">The cart contains </span>
-        <span className="cart-count">{quant}</span>
+        <span className="cart-count">{quantity}</span>
         <span className="hide-content">items.</span>
         <span className="cart-name" aria-hidden="true">
           )

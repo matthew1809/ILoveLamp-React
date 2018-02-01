@@ -25,3 +25,20 @@ export default (state = initialState, action) => {
       return { ...state, fetching: false };
   }
 };
+
+export const fetchProductsStart = () => ({
+  type: FETCH_PRODUCTS_START
+});
+
+export const fetchProductsEnd = data => ({
+  type: FETCH_PRODUCTS_END,
+  payload: data
+});
+
+export const GetProducts = resources => (dispatch, getState, api) => {
+  dispatch(fetchProductsStart());
+
+  return api
+    .GetProducts(resources)
+    .then(products => dispatch(fetchProductsEnd(products)));
+};

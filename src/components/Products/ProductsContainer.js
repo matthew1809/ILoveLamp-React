@@ -1,23 +1,14 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
 import AllProducts from './AllProducts';
 import Footer from '../global/Footer';
 import ProductsHeader from './ProductsHeader';
 import MobileNav from '../global/Mobile/MobileNav';
-import { connect } from 'react-redux';
 import Loading from '../global/Loading';
 
-import {
-  FETCH_PRODUCTS_START,
-  FETCH_PRODUCTS_END
-} from '../../ducks/products';
-
-var api = require('../../moltin.js');
-
-const mapStateToProps = state => {
-  return {
-    products: state.products
-  };
-};
+import { GetProducts } from '../../ducks/products';
 
 class ProductsContainer extends Component {
   componentWillMount() {
@@ -29,30 +20,18 @@ class ProductsContainer extends Component {
     document.body.appendChild(script);
   }
 
-  // a react lifecycle event, read more at http://busypeoples.github.io/post/react-component-lifecycle/
   componentDidMount() {
-    // check if we already have a moltin products in the store
-    if (this.props.products.fetched === false) {
-      // dispatch an action to our redux reducers
-      this.props.dispatch(dispatch => {
-        // this action will set a fetching field to true
-        dispatch({ type: FETCH_PRODUCTS_START });
+    const { fetched } = this.props;
 
-        // get the moltin products from the API
-        api
-          .GetProducts()
-
-          .then(products => {
-            /* now that we have the products, this action will set fetching to false and fetched to true,
-            as well as add the moltin products to the store */
-            dispatch({ type: FETCH_PRODUCTS_END, payload: products });
-          });
-      });
+    if (!fetched) {
+      this.props.GetProducts();
     }
   }
 
   render() {
-    if (this.props.products.products) {
+    const { products } = this.props;
+
+    if (products) {
       return (
         <div>
           <MobileNav />
@@ -74,4 +53,21 @@ class ProductsContainer extends Component {
   }
 }
 
-export default connect(mapStateToProps)(ProductsContainer);
+const mapStateToProps = ({
+  products: { fetching, fetched, error, products }
+}) => ({
+  fetching,
+  fetched,
+  error,
+  products
+});
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      GetProducts
+    },
+    dispatch
+  );
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductsContainer);

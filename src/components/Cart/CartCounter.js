@@ -1,27 +1,13 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { FETCH_CART_START, FETCH_CART_END } from '../../ducks/cart';
-
-var api = require('../../moltin.js');
-
-function mapStateToProps(state) {
-  return state;
-}
+import { GetCartItems } from '../../ducks/cart';
 
 class CartCounter extends Component {
   componentDidMount() {
-    this.props.dispatch(dispatch => {
-      dispatch({ type: FETCH_CART_START });
-
-      api
-        .GetCartItems()
-
-        .then(cart => {
-          dispatch({ type: FETCH_CART_END, payload: cart, gotNew: true });
-        });
-    });
+    this.props.GetCartItems();
   }
 
   render() {
@@ -49,4 +35,16 @@ class CartCounter extends Component {
   }
 }
 
-export default connect(mapStateToProps)(CartCounter);
+const mapStateToProps = ({ cart }) => ({
+  cart
+});
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      GetCartItems
+    },
+    dispatch
+  );
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartCounter);

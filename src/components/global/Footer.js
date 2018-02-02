@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import MailingList from './MailingList';
 
 const Footer = () => (
-  <div>
+  <Fragment>
     <MailingList />
+
     <footer className="push">
       <div className="content">
         <div className="footer-content">
@@ -192,7 +193,7 @@ const Footer = () => (
         </div>
       </div>
     </footer>
-  </div>
+  </Fragment>
 );
 
 export default Footer;

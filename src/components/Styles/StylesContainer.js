@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import MailingList from '../global/MailingList';
 import StylesHeader from './StylesHeader';
 import StylesMenu from './StylesMenu';
 import StylesHeading from './StylesHeading';
@@ -88,7 +87,6 @@ class StylesContainer extends Component {
                   <StyleProducts />
                 </div>
               </section>
-              <MailingList />
             </main>
           </div>
         );
@@ -109,7 +107,6 @@ class StylesContainer extends Component {
                   <p>You do not have any categories set up with products</p>
                 </div>
               </section>
-              <MailingList />
             </main>
           </div>
         );

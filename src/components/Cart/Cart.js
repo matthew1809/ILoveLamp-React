@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import MobileNav from '../global/Mobile/MobileNav';
-import MailingList from '../global/MailingList';
 import CartHeader from './CartHeader';
 import CartItems from './CartItems';
 
@@ -57,7 +56,6 @@ class Cart extends Component {
                   </form>
                 </div>
               </section>
-              <MailingList />
             </main>
           </div>
         );
@@ -80,7 +78,6 @@ class Cart extends Component {
                   </div>
                 </div>
               </section>
-              <MailingList />
             </main>
           </div>
         );
@@ -109,7 +106,6 @@ class Cart extends Component {
                 </div>
               </div>
             </section>
-            <MailingList />
           </main>
         </div>
       );

@@ -11,6 +11,15 @@ import { GetProducts } from '../../ducks/products';
 import { GetCartItems } from '../../ducks/cart';
 
 class Cart extends Component {
+  componentWillMount() {
+    const script = document.createElement('script');
+
+    script.src = '../../js/production.min.js';
+    script.async = false;
+
+    document.body.appendChild(script);
+  }
+
   componentDidMount() {
     this.props.GetProducts();
     this.props.GetCartItems();

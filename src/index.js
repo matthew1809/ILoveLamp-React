@@ -5,6 +5,7 @@ import { ConnectedRouter } from 'react-router-redux';
 
 import store, { history } from './store';
 import App from './components/App';
+
 import './index.css';
 
 const target = document.getElementById('root');

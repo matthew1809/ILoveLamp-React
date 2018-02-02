@@ -7,7 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ```bash
 git clone https://github.com/moltin/react-demo-store.git
 cd react-demo-store
-yarn #or npm install
+yarn # or npm install
 yarn start # or npm start
 ```
 

@@ -3,7 +3,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import SingleProduct from './SingleProduct';
-import Footer from '../global/Footer';
 import CartHeader from '../Cart/CartHeader';
 import ProductHeader from './ProductHeader';
 import Loading from '../global/Loading';
@@ -29,7 +28,6 @@ class Product extends Component {
           <MobileNav />
           <ProductHeader />
           <SingleProduct />
-          <Footer />
         </div>
       );
     } else {
@@ -38,7 +36,6 @@ class Product extends Component {
           <MobileNav />
           <CartHeader />
           <Loading />
-          <Footer />
         </div>
       );
     }

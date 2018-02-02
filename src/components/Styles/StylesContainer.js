@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import MailingList from '../global/MailingList';
 import StylesHeader from './StylesHeader';
-import Footer from '../global/Footer';
 import StylesMenu from './StylesMenu';
 import StylesHeading from './StylesHeading';
 import StyleProducts from './StyleProducts';
 import Loading from '../global/Loading';
-import { connect } from 'react-redux';
 import MobileNav from '../global/Mobile/MobileNav';
 
-import {
-  FETCH_PRODUCTS_START,
-  FETCH_PRODUCTS_END
-} from '../../ducks/products';
+import { FETCH_PRODUCTS_START, FETCH_PRODUCTS_END } from '../../ducks/products';
 import {
   FETCH_CATEGORIES_START,
   FETCH_CATEGORIES_END
@@ -93,7 +90,6 @@ class StylesContainer extends Component {
               </section>
               <MailingList />
             </main>
-            <Footer />
           </div>
         );
       } else {
@@ -115,7 +111,6 @@ class StylesContainer extends Component {
               </section>
               <MailingList />
             </main>
-            <Footer />
           </div>
         );
       }
@@ -125,7 +120,6 @@ class StylesContainer extends Component {
           <MobileNav />
           <StylesHeader />
           <Loading />
-          <Footer />
         </div>
       );
     }

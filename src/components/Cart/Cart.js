@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 import MobileNav from '../global/Mobile/MobileNav';
 import MailingList from '../global/MailingList';
-import Footer from '../global/Footer';
 import CartHeader from './CartHeader';
 import CartItems from './CartItems';
 
@@ -59,7 +58,6 @@ class Cart extends Component {
                 </div>
               </section>
               <MailingList />
-              <Footer />
             </main>
           </div>
         );
@@ -84,7 +82,6 @@ class Cart extends Component {
               </section>
               <MailingList />
             </main>
-            <Footer />
           </div>
         );
       }

@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 import HomeHeader from './HomeHeader';
 import HomeMainSection from './HomeMainSection';
-import Footer from '../global/Footer';
 import MobileNav from '../global/Mobile/MobileNav';
 import Loading from '../global/Loading';
 
@@ -51,7 +50,6 @@ class Home extends Component {
           <MobileNav />
           <HomeHeader />
           <HomeMainSection />
-          <Footer />
         </div>
       );
     } else {
@@ -60,7 +58,6 @@ class Home extends Component {
           <MobileNav />
           <HomeHeader />
           <Loading />
-          <Footer />
         </div>
       );
     }

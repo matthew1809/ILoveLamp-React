@@ -1,8 +1,8 @@
 export const SET_STYLE = 'styles/SET_STYLE';
 
 const initialState = {
-  style: '',
-  header: null,
+  style: 'Bright',
+  header: 'Bright',
   error: null
 };
 

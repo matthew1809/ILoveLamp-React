@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import StylesHeader from './StylesHeader';
@@ -8,14 +9,9 @@ import StyleProducts from './StyleProducts';
 import Loading from '../global/Loading';
 import MobileNav from '../global/Mobile/MobileNav';
 
-import { FETCH_PRODUCTS_START, FETCH_PRODUCTS_END } from '../../ducks/products';
-import {
-  FETCH_CATEGORIES_START,
-  FETCH_CATEGORIES_END
-} from '../../ducks/categories';
-import { SET_STYLE } from '../../ducks/styles';
-
-import * as api from '../../moltin';
+import { GetProducts } from '../../ducks/products';
+import { GetCategories } from '../../ducks/categories';
+import { setStyle } from '../../ducks/styles';
 
 class StylesContainer extends Component {
   componentWillMount() {
@@ -29,43 +25,19 @@ class StylesContainer extends Component {
 
   componentDidMount() {
     if (this.props.products.fetched === false) {
-      this.props.dispatch(dispatch => {
-        dispatch({ type: FETCH_PRODUCTS_START });
-
-        api
-          .GetProducts()
-
-          .then(products => {
-            dispatch({ type: FETCH_PRODUCTS_END, payload: products });
-          });
-      });
+      this.props.GetProducts();
     }
 
-    // now we do the same thing for categories
     if (this.props.categories.fetched === false) {
-      this.props.dispatch(dispatch => {
-        dispatch({ type: FETCH_CATEGORIES_START });
-
-        api
-          .GetCategories()
-
-          .then(categories => {
-            dispatch({ type: FETCH_CATEGORIES_END, payload: categories });
-            if (categories.data.length > 0) {
-              dispatch({
-                type: SET_STYLE,
-                style: categories.data[0].name,
-                header: categories.data[0].name
-              });
-            }
-          });
-      });
+      this.props.GetCategories();
     }
   }
 
   render() {
-    if (this.props.categories.categories && this.props.products.products) {
-      if (this.props.categories.categories.data.length > 0) {
+    const { categories, products } = this.props;
+
+    if (categories && products.products) {
+      if (categories.categories.data.length > 0) {
         return (
           <div>
             <MobileNav />
@@ -117,8 +89,19 @@ class StylesContainer extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  ...state
+const mapStateToProps = ({ categories, products }) => ({
+  categories,
+  products
 });
 
-export default connect(mapStateToProps)(StylesContainer);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      setStyle,
+      GetProducts,
+      GetCategories
+    },
+    dispatch
+  );
+
+export default connect(mapStateToProps, mapDispatchToProps)(StylesContainer);

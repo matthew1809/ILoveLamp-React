@@ -13,13 +13,9 @@ import {
   FETCH_CATEGORIES_START,
   FETCH_CATEGORIES_END
 } from '../../ducks/categories';
-import { INITIAL_STYLE } from '../../ducks/styles';
+import { SET_STYLE } from '../../ducks/styles';
 
-var api = require('../../moltin.js');
-
-function mapStateToProps(state) {
-  return state;
-}
+import * as api from '../../moltin';
 
 class StylesContainer extends Component {
   componentWillMount() {
@@ -31,9 +27,7 @@ class StylesContainer extends Component {
     document.body.appendChild(script);
   }
 
-  // a react lifecycle event, read more at http://busypeoples.github.io/post/react-component-lifecycle/
   componentDidMount() {
-    // check if we already have a moltin products in the store
     if (this.props.products.fetched === false) {
       this.props.dispatch(dispatch => {
         dispatch({ type: FETCH_PRODUCTS_START });
@@ -59,7 +53,7 @@ class StylesContainer extends Component {
             dispatch({ type: FETCH_CATEGORIES_END, payload: categories });
             if (categories.data.length > 0) {
               dispatch({
-                type: INITIAL_STYLE,
+                type: SET_STYLE,
                 style: categories.data[0].name,
                 header: categories.data[0].name
               });
@@ -122,5 +116,9 @@ class StylesContainer extends Component {
     }
   }
 }
+
+const mapStateToProps = state => ({
+  ...state
+});
 
 export default connect(mapStateToProps)(StylesContainer);

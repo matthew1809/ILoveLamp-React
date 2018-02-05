@@ -1,17 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CartCounter from '../Cart/CartCounter';
 import { connect } from 'react-redux';
+
+import CartCounter from '../Cart/CartCounter';
 
 import Modern from '../../assets/img/modern.png';
 import Silver from '../../assets/img/silver.png';
 import Bright from '../../assets/img/bright.png';
 import Unique from '../../assets/img/unique.png';
 
-const StylesHeader = props => {
+const StylesHeader = ({ style, header }) => {
   let Header = null;
 
-  switch (props.styles.header) {
+  switch (header) {
     case 'Modern':
       Header = Modern;
       break;
@@ -127,7 +128,7 @@ c-1.5-1.6-3.7-2.5-5.9-2.4h-8.5V27.4z"
       <div className="header-container light">
         <div className="content">
           <h1>
-            {props.styles.style}
+            {style}
             <span className="hide-content"> styles</span>
           </h1>
         </div>
@@ -136,8 +137,9 @@ c-1.5-1.6-3.7-2.5-5.9-2.4h-8.5V27.4z"
   );
 };
 
-const mapStateToProps = ({ styles }) => ({
-  styles
+const mapStateToProps = ({ styles: { style, header } }) => ({
+  style,
+  header
 });
 
 export default connect(mapStateToProps)(StylesHeader);

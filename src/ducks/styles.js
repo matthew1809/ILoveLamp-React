@@ -1,5 +1,4 @@
-export const CHANGE_STYLE = 'styles/CHANGE_STYLE';
-export const INITIAL_STYLE = 'styles/INITIAL_STYLE';
+export const SET_STYLE = 'styles/SET_STYLE';
 
 const initialState = {
   style: '',
@@ -9,13 +8,16 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case CHANGE_STYLE:
-      return { ...state, style: action.style, header: action.style };
-
-    case INITIAL_STYLE:
+    case SET_STYLE:
       return { ...state, style: action.style, header: action.style };
 
     default:
       return { ...state };
   }
 };
+
+export const setStyle = style => ({
+  type: SET_STYLE,
+  style,
+  header: style
+});

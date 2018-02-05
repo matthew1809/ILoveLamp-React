@@ -1,6 +1,15 @@
+<p align="center">
+  <a href="https://ilovelamp.now.sh">
+    ![Moltin React Demo Store](./.github/moltin-react.png)
+  </a>
+</p>
+
 # Moltin &mdash; React Demo Store
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find a guide to some of the most common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+An example store built using [React](https://reactjs.org/), [Redux](https://redux.js.org/) and [moltin](https://moltin.com). This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
+* [Demo](https://ilovelamp.now.sh)
+* [API Reference](https://docs.moltin.com)
 
 ## Development
 

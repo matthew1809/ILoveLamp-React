@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://ilovelamp.now.sh">
-    ![Moltin React Demo Store](./.github/moltin-react.png)
+    <img src="https://i.imgur.com/B1EZxsB.png" alt="Moltin React Demo Store" />
   </a>
 </p>
 

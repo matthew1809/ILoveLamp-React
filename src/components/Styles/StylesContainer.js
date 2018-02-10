@@ -36,7 +36,7 @@ class StylesContainer extends Component {
   render() {
     const { categories, products } = this.props;
 
-    if (categories && products.products) {
+    if (categories.fetched === true && products.products) {
       if (categories.categories.data.length > 0) {
         return (
           <div>

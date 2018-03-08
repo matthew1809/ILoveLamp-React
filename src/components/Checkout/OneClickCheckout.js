@@ -15,7 +15,7 @@ class OneClickCheckout extends Component {
       history.push('/cart');
     }
 
-    const cart = await addToCart(params.productId, 1);
+    await addToCart(params.productId, 1);
 
     history.push('/cart');
   }

@@ -22,11 +22,11 @@ class Nav extends React.Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <MenuButton />
         <MobileNavMenu />
         <div className="site-overlay" />
-      </div>
+      </React.Fragment>
     );
   }
 }

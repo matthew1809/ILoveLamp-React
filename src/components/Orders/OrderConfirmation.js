@@ -1,5 +1,5 @@
 import React from 'react';
-import * as WeLoveYou from '../../assets/img/weloveyou.svg';
+import { ReactComponent as WeLoveYou } from '../../assets/img/weloveyou.svg';
 
 const OrderConfirmation = () => (
   <main role="main" id="container" className="main-container push">

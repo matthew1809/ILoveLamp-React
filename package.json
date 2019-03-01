@@ -7,7 +7,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "now-build": "react-scripts build"
   },
   "dependencies": {
     "@moltin/sdk": "^3.18.1",

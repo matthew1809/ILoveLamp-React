@@ -14,11 +14,24 @@ import Footer from './global/Footer';
 
 const App = () => {
   useEffect(() => {
+    removeScript();
+    loadScript();
+  });
+
+  const removeScript = () => {
+    const script = document.getElementById('main-script');
+    if (script) {
+      script.parentNode.removeChild(script);
+    }
+  };
+
+  const loadScript = () => {
     const script = document.createElement('script');
+    script.id = 'main-script';
     script.src = '../../js/production.min.js';
     script.async = false;
     document.body.appendChild(script);
-  }, []);
+  };
 
   return (
     <div>

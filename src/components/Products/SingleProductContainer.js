@@ -6,7 +6,6 @@ import SingleProduct from './SingleProduct';
 import CartHeader from '../Cart/CartHeader';
 import ProductHeader from './ProductHeader';
 import Loading from '../global/Loading';
-import MobileNav from '../global/Mobile/MobileNav';
 
 import { GetProducts } from '../../ducks/products';
 
@@ -25,7 +24,6 @@ class Product extends Component {
     if (products) {
       return (
         <div>
-          <MobileNav />
           <ProductHeader />
           <SingleProduct />
         </div>
@@ -33,7 +31,6 @@ class Product extends Component {
     } else {
       return (
         <div>
-          <MobileNav />
           <CartHeader />
           <Loading />
         </div>
@@ -55,4 +52,7 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-export default connect(mapStateToProps, mapDispatchToProps)(Product);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Product);

@@ -1,5 +1,5 @@
 import React from 'react';
-import * as WeLoveYou from '../../assets/img/weloveyou.svg';
+import { ReactComponent as WeLoveYouImg } from '../../assets/img/weloveyou.svg';
 
 const OrderConfirmation = () => (
   <main role="main" id="container" className="main-container push">
@@ -8,7 +8,9 @@ const OrderConfirmation = () => (
         <div className="confirmation">
           <h2>Awesome, your order has been placed</h2>
           <p>Make sure you check your emails for confirmation.</p>
-          <img src={WeLoveYou} alt="We Love You" />
+          <div style={{ margin: '1.875rem auto 4.625rem', width: '14.375rem' }}>
+            <WeLoveYouImg />
+          </div>
         </div>
       </div>
     </section>

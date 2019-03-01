@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 import HomeHeader from './HomeHeader';
 import HomeMainSection from './HomeMainSection';
-import MobileNav from '../global/Mobile/MobileNav';
 import Loading from '../global/Loading';
 
 import { GetProducts } from '../../ducks/products';
@@ -12,15 +11,6 @@ import { GetCategories } from '../../ducks/categories';
 import { GetCollections } from '../../ducks/collections';
 
 class Home extends Component {
-  componentWillMount() {
-    const script = document.createElement('script');
-
-    script.src = '../../js/production.min.js';
-    script.async = false;
-
-    document.body.appendChild(script);
-  }
-
   componentDidMount() {
     const { products, categories, collections } = this.props;
 
@@ -47,7 +37,6 @@ class Home extends Component {
     ) {
       return (
         <div>
-          <MobileNav />
           <HomeHeader />
           <HomeMainSection />
         </div>
@@ -55,7 +44,6 @@ class Home extends Component {
     } else {
       return (
         <div>
-          <MobileNav />
           <HomeHeader />
           <Loading />
         </div>
@@ -80,4 +68,7 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);

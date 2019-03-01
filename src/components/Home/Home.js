@@ -11,15 +11,6 @@ import { GetCategories } from '../../ducks/categories';
 import { GetCollections } from '../../ducks/collections';
 
 class Home extends Component {
-  componentWillMount() {
-    const script = document.createElement('script');
-
-    script.src = '../../js/production.min.js';
-    script.async = false;
-
-    document.body.appendChild(script);
-  }
-
   componentDidMount() {
     const { products, categories, collections } = this.props;
 

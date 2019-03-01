@@ -3,7 +3,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import MobileNav from '../global/Mobile/MobileNav';
 import CartHeader from './CartHeader';
 import CartItems from './CartItems';
 
@@ -11,15 +10,6 @@ import { GetProducts } from '../../ducks/products';
 import { GetCartItems } from '../../ducks/cart';
 
 class Cart extends Component {
-  componentWillMount() {
-    const script = document.createElement('script');
-
-    script.src = '../../js/production.min.js';
-    script.async = false;
-
-    document.body.appendChild(script);
-  }
-
   componentDidMount() {
     this.props.GetProducts();
     this.props.GetCartItems();
@@ -37,7 +27,6 @@ class Cart extends Component {
         var subtotal = '$' + cart.cart.meta.display_price.with_tax.amount / 100;
         return (
           <div>
-            <MobileNav />
             <CartHeader />
             <main role="main" id="container" className="main-container push">
               <section className="cart">
@@ -53,10 +42,8 @@ class Cart extends Component {
                     </div>
                     <CartItems />
                     <div className="total-price">
-                      Subtotal<span className="hide-content">
-                        {' '}
-                        of all products
-                      </span>{' '}
+                      Subtotal
+                      <span className="hide-content"> of all products</span>{' '}
                       <span className="price">{subtotal}</span>
                     </div>
                     <Link className="btn submit" to="/checkout">
@@ -71,7 +58,6 @@ class Cart extends Component {
       } else {
         return (
           <div>
-            <MobileNav />
             <CartHeader />
             <main role="main" id="container" className="main-container push">
               <section className="cart">
@@ -94,7 +80,6 @@ class Cart extends Component {
     } else {
       return (
         <div>
-          <MobileNav />
           <CartHeader />
           <main role="main" id="container" className="main-container push">
             <section>
@@ -136,4 +121,7 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Cart);

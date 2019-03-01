@@ -8,7 +8,7 @@ const StylesMenu = ({ categories, setStyle }) => (
   <div className="style-links-container">
     {categories.categories.data.map(function(category) {
       return (
-        <a
+        <button
           name={category.name}
           className="style-link"
           key={category.id}
@@ -16,7 +16,7 @@ const StylesMenu = ({ categories, setStyle }) => (
           <span className="hide-content">Display </span>
           {category.name}
           <span className="hide-content"> styles</span>
-        </a>
+        </button>
       );
     })}
   </div>
@@ -34,4 +34,7 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-export default connect(mapStateToProps, mapDispatchToProps)(StylesMenu);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(StylesMenu);

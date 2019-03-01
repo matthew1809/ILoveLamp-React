@@ -15,7 +15,7 @@ import Footer from './global/Footer';
 const App = () => {
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = '../../public/js/production.min.js';
+    script.src = '../../js/production.min.js';
     script.async = false;
     document.body.appendChild(script);
   }, []);

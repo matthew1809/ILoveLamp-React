@@ -14,6 +14,12 @@
       "headers": { "cache-control": "s-maxage=31536000,immutable" },
       "dest": "/static/$1"
     },
+    {
+      "src": "^/js/(.*)",
+      "headers": { "cache-control": "s-maxage=31536000,immutable" },
+      "dest": "/js/$1"
+    },
+    { "src": "^/favicon.ico", "dest": "/favicon.ico" },
     { "src": "^/asset-manifest.json", "dest": "/asset-manifest.json" },
     { "src": "^/manifest.json", "dest": "/manifest.json" },
     { "src": "^/precache-manifest.(.*)", "dest": "/precache-manifest.$1" },

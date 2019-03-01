@@ -7,6 +7,7 @@ import store, { history } from './store';
 import App from './components/App';
 
 import './index.css';
+import './style.min.css';
 
 const target = document.getElementById('root');
 
